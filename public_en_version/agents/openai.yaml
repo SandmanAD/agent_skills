@@ -1,0 +1,4 @@
+interface:
+  display_name: "Anki Language Cards"
+  short_description: "Decks in any language: translation, examples and IPA in a ready CSV"
+  default_prompt: "Use $anki-language-cards: create 100 cards in the target language with translations, examples and IPA. Ask me which language to translate into."
