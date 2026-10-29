@@ -1,0 +1,201 @@
+/* Цвета: светлая тема */
+.card {
+  --page: #f4f5f7;
+  --surface: #ffffff;
+  --text: #202536;
+  --text-soft: #4a5468;
+  --muted: #7b8595;
+  --line: #dfe4eb;
+  --accent: #477b6a;
+}
+
+/* Цвета: тёмная тема Anki */
+.card.nightMode,
+.card.night_mode,
+.nightMode .card,
+.night_mode .card {
+  --page: #171c25;
+  --surface: #202835;
+  --text: #e8edf5;
+  --text-soft: #c2cbd8;
+  --muted: #8f9cb0;
+  --line: #354253;
+  --accent: #7fbea5;
+}
+
+html {
+  background: #f4f5f7;
+}
+
+html.nightMode,
+html.night_mode,
+html:has(.card.nightMode),
+html:has(.card.night_mode) {
+  background: #171c25;
+}
+
+.card {
+  box-sizing: border-box;
+  width: calc(100% - 32px);
+  max-width: 740px;
+  margin: 32px auto;
+  padding: 30px 30px 32px;
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--accent);
+  border-radius: 16px;
+  background: var(--surface);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  font-size: 22px;
+  line-height: 1.55;
+  text-align: left;
+  overflow-wrap: anywhere;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Направление карточки */
+.dir {
+  margin-bottom: 14px;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+/* Слово или фраза */
+.word {
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+/* IPA */
+.ipa {
+  margin-top: 6px;
+  font-size: 18px;
+  color: var(--muted);
+  font-family: "Charis SIL", "Doulos SIL", "Gentium Plus", -apple-system, sans-serif;
+}
+
+/* Пример: блок на обороте */
+.example-block {
+  margin-top: 18px;
+  padding-left: 14px;
+  border-left: 2px solid var(--line);
+}
+
+.example {
+  color: var(--text-soft);
+}
+
+.example-ipa {
+  margin-top: 2px;
+  font-size: 16px;
+  color: var(--muted);
+}
+
+.example-tr {
+  margin-top: 8px;
+  color: var(--muted);
+}
+
+/* Кнопка озвучки Anki */
+.replay-button {
+  display: inline-block;
+  margin-left: 8px;
+  vertical-align: -4px;
+}
+
+.replay-button svg {
+  width: 26px;
+  height: 26px;
+}
+
+.card .replay-button svg circle {
+  fill: var(--surface);
+  stroke: var(--accent);
+}
+
+.card .replay-button svg path {
+  fill: var(--accent);
+}
+
+/* Перевод */
+.translation {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* Пояснение к переводу: <small> в поле перевода */
+.translation br {
+  display: none;
+}
+
+.translation small {
+  display: block;
+  margin-top: 8px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+/* На вопросе RU → … пояснение скрыто: в нём часто есть ответ */
+.translation.question small {
+  display: none;
+}
+
+/* Контекст на обратной карточке */
+.context {
+  margin-top: 14px;
+  font-size: 19px;
+  color: var(--muted);
+}
+
+/* Граница между вопросом и ответом */
+hr#answer {
+  height: 0;
+  margin: 26px 0 22px;
+  border: 0;
+  border-top: 1px solid var(--line);
+}
+
+b, strong {
+  font-weight: 650;
+}
+
+a {
+  color: var(--accent);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Телефон */
+@media (max-width: 480px) {
+  .card {
+    width: calc(100% - 20px);
+    margin: 14px auto;
+    padding: 22px 20px 24px;
+    font-size: 20px;
+    border-radius: 14px;
+  }
+
+  .word {
+    font-size: 28px;
+  }
+
+  .translation {
+    font-size: 24px;
+  }
+
+  .ipa {
+    font-size: 17px;
+  }
+
+  .context {
+    font-size: 17px;
+  }
+}

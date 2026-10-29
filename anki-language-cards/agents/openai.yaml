@@ -1,0 +1,4 @@
+interface:
+  display_name: "Карточки Anki для языков"
+  short_description: "Колоды на любом языке: перевод, примеры и IPA в готовом CSV"
+  default_prompt: "Используй $anki-language-cards: создай 100 карточек на нужном языке с русским переводом, примерами и IPA."
