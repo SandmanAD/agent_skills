@@ -1,0 +1,6 @@
+Для Ubuntu с GNOME Terminal настрой так. Файл должен находиться в ~/Downloads/launch.py на Ubuntu.
+	1	Проверь открытие отдельного окна: gnome-terminal --window -- python3 "$HOME/Downloads/launch.py"
+	2	В обычном терминале Ubuntu выполни: env | grep -E '^(DISPLAY|WAYLAND_DISPLAY|DBUS_SESSION_BUS_ADDRESS|XDG_RUNTIME_DIR|XAUTHORITY)=' Скопируй полученные строки — они нужны cron для доступа к рабочему столу.
+	3	Открой расписание без sudo: crontab -e
+	4	Вставь скопированные строки, а под ними добавь одной строкой: */15 * * * * /usr/bin/gnome-terminal --window -- /usr/bin/python3 "$HOME/Downloads/launch.py"
+После сохранения новое окно будет открываться в :00, :15, :30 и :45, пока компьютер включ
